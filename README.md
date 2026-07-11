@@ -39,7 +39,7 @@
 - 🚧 浏览器插件（Claude / ChatGPT / DeepSeek 一键存入）：开发中
 - 🗺️ 每周邮件推送、手机端分享采集：路线图上
 
-👉 **试一试：<https://your-domain.example>**（把这行换成你的真实链接）
+👉 **试一试：
 
 ## 反馈
 
