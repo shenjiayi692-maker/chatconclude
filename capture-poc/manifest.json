@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Capture PoC (weekly-review)",
+  "description": "验证 selector 思路：在 claude.ai 抽取当前对话，console.log 出 NormalizedItem[]。不发网络请求、无 UI。",
+  "version": "0.0.1",
+  "permissions": [],
+  "host_permissions": [],
+  "content_scripts": [
+    {
+      "matches": ["https://claude.ai/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

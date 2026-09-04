@@ -1,4 +1,3 @@
-# chatconclude
 # 复习周报 · Remember, not retrieve
 
 > 你每周和 AI 聊几十次。真正学到的东西，一周后还记得多少？
@@ -39,7 +38,65 @@
 - 🚧 浏览器插件（Claude / ChatGPT / DeepSeek 一键存入）：开发中
 - 🗺️ 每周邮件推送、手机端分享采集：路线图上
 
-👉 **试一试：
+👉 **试一试：<https://chat-conclude.vercel.app>**（粘贴一段对话即可，无需注册）
+
+## 技术栈
+
+| | |
+|---|---|
+| 应用 | Next.js 16（App Router）· React 19 · TypeScript · Tailwind v4 |
+| 模型 | Anthropic Claude（`@anthropic-ai/sdk`），负责知识/干活二分类、周报撰写与 Quiz 生成 |
+| 数据 | Supabase Postgres + SSR Auth，7 个版本化迁移，按用户行级隔离 |
+| 采集 | Chrome MV3 扩展，纯 DOM 抓取，不调用任何平台内部 API |
+| 部署 | Vercel，GitHub Actions 跑 lint / test / build |
+
+免登录的粘贴入口 `/` 是完全无状态的：处理完即弃，不落库、不写日志。登录后的数据全部经 Supabase RLS 按用户隔离。
+
+## 本地开发
+
+```bash
+cp .env.example .env.local
+npm install
+npm run dev
+```
+
+生产构建：
+
+```bash
+npm run lint
+npm test
+npm run build
+```
+
+## 数据库迁移
+
+按文件名顺序执行 `supabase/migrations/` 下的 SQL。生产部署必须先跑迁移，再部署依赖新表结构的代码。
+
+## 主要入口
+
+- `/`：免登录粘贴版，不持久化原始对话
+- `/login`：邮箱登录
+- `/app`：登录后的本周回顾
+- `/app/capture`：手机和电脑手动保存对话
+- `/app/history`：历史回顾
+- `/app/settings`：采集方式、时区、数据和账号设置
+- `/app/setup/extension`：免复制令牌的一键扩展连接
+
+旧入口 `/my`、`/save`、`/history`、`/settings/token`、`/connect-extension` 保留兼容跳转。
+
+## 浏览器扩展
+
+见 [`extension/README.md`](extension/README.md)。扩展只使用 DOM 抓取，不调用第三方 AI 平台内部 API；商店发布清单见 [`docs/CHROME_WEB_STORE.md`](docs/CHROME_WEB_STORE.md)。
+
+## 上线检查
+
+见 [`docs/PRODUCTION_CHECKLIST.md`](docs/PRODUCTION_CHECKLIST.md)。
+
+## 产品文档
+
+- [`PRODUCT.md`](PRODUCT.md) — 产品定义
+- [`PRD-demo.md`](PRD-demo.md) — 免登录 demo 的需求
+- [`RESEARCH-capture.md`](RESEARCH-capture.md) — 采集方案的调研与取舍
 
 ## 反馈
 

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- 手工构造的 chat.deepseek.com 会话 DOM 快照（按调研报告 §2 的结构事实精简：
+     虚拟列表 + .ds-message 用户消息 + .ds-markdown 模型回复 + .md-code-block 代码块）。
+     页面改版时：用 DevTools 复制真实会话的最小结构替换本文件，再跑 npm test。 -->
+<html>
+<body>
+<div class="_765a5cd ds-scroll-area">
+  <div class="ds-virtual-list-visible-items">
+    <div class="_9663006" data-virtual-list-item-key="0">
+      <div class="d29f3d7d ds-message _63c77b1">
+        <div class="fbb737a4">为什么 HTTPS 握手比 HTTP 慢，慢在哪一步？</div>
+      </div>
+      <div class="_11d6b3a">
+        <div class="ds-markdown ds-assistant-message-main-content">
+          <p class="ds-markdown-paragraph">主要开销在 TLS 握手阶段：协商加密套件、验证证书、密钥交换，至少多一到两个 RTT。</p>
+          <div class="md-code-block">
+            <div class="md-code-block-banner-wrap">
+              <div class="md-code-block-banner"><span>elixir</span><div class="ds-icon-button">复制</div></div>
+            </div>
+            <pre>IO.puts("tls handshake")</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="_9663006" data-virtual-list-item-key="1">
+      <div class="d29f3d7d ds-message _63c77b1">
+        <div class="fbb737a4">帮我把上面的回答翻译成英文。</div>
+      </div>
+      <div class="_11d6b3a">
+        <div class="ds-markdown ds-assistant-message-main-content">
+          <p class="ds-markdown-paragraph">The main overhead is in the TLS handshake phase.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

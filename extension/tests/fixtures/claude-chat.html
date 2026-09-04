@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- 手工构造的 claude.ai 会话 DOM 快照（按 2026-07 结构事实精简）。
+     页面改版时：用 DevTools 复制真实会话的最小结构替换本文件，再跑 npm test。 -->
+<html>
+<body>
+<main>
+  <div class="flex-1">
+    <div data-test-render-count="1">
+      <div class="mb-1 mt-6 group">
+        <div data-testid="user-message">
+          <p>RAG 里为什么要用向量数据库做检索，而不是直接上全文检索？</p>
+        </div>
+        <button aria-label="Edit">编辑</button>
+      </div>
+    </div>
+
+    <div data-test-render-count="2">
+      <div class="font-claude-response">
+        <p>核心区别在于匹配的是语义相似度还是词面重合度。向量检索把文本编码成 embedding，能找到用词不同但意思相近的段落。</p>
+        <pre><code class="language-python">def hybrid_search(q):
+    return merge(bm25(q), vector(q))</code></pre>
+        <button aria-label="Copy">复制</button>
+      </div>
+    </div>
+
+    <div data-test-render-count="3">
+      <div class="mb-1 mt-6 group">
+        <div data-testid="user-message">
+          <p>帮我把这段自我介绍润色一下，让它更专业。</p>
+        </div>
+      </div>
+    </div>
+
+    <div data-test-render-count="4">
+      <!-- 旧类名 .font-claude-message：验证新旧兼容 -->
+      <div class="font-claude-message">
+        <p>好的，这是润色后的版本：大家好，我是小李，两年 Java 后端经验。</p>
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+</html>

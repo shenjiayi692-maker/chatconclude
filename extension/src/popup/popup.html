@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="brand-mark" aria-hidden="true">W</div>
+    <div>
+      <h1 id="title">每周知识复习</h1>
+      <p id="subtitle" class="eyebrow">对话采集</p>
+    </div>
+  </header>
+
+  <section id="consentCard" class="consent-card">
+    <p id="consentLabel" class="eyebrow accent">开始前请确认</p>
+    <h2 id="consentTitle">你决定保存什么</h2>
+    <p id="consentDisclosure" class="disclosure">
+      只有当你点击保存时，扩展才会读取当前 AI 会话中你选择的提问和回答，并加密上传到你的每周知识复习账号，用于生成周报和测验。
+    </p>
+    <ul class="privacy-points">
+      <li id="consentPointOne">不会后台采集或监控浏览记录</li>
+      <li id="consentPointTwo">不会出售数据或用于广告</li>
+      <li id="consentPointThree">可随时断开并清空本地数据</li>
+    </ul>
+    <label class="consent-check">
+      <input id="consentCheckbox" type="checkbox" />
+      <span id="consentCheckboxLabel">我了解并同意以上采集和使用方式</span>
+    </label>
+    <button id="acceptConsent" class="primary" disabled>同意并继续</button>
+    <p class="legal-line">
+      <a id="privacyLink" href="https://chat-conclude.vercel.app/privacy" target="_blank">查看完整隐私说明</a>
+    </p>
+  </section>
+
+  <div id="appContent" hidden>
+    <section class="connection-card">
+      <div class="connection-row">
+        <span id="connectionDot" class="connection-dot" aria-hidden="true"></span>
+        <p id="status" class="status">检查连接中…</p>
+      </div>
+      <button id="connect" class="primary">连接账号</button>
+      <p id="connectHint" class="hint">打开网站登录后自动连接，无需复制令牌。</p>
+    </section>
+
+    <section class="capture-card">
+      <p id="captureLabel" class="eyebrow">当前会话</p>
+      <button id="saveAll" class="primary">存整段对话</button>
+      <p id="saveAllHint" class="hint">也可以关闭弹窗，使用页面右下角按钮只保存选中的消息。</p>
+      <p id="result" class="status" aria-live="polite"></p>
+    </section>
+
+    <details>
+      <summary id="manualSummary">手动配置与故障排查</summary>
+      <section class="field">
+        <label id="apiBaseLabel" for="apiBase">服务地址</label>
+        <input id="apiBase" type="url" placeholder="https://chat-conclude.vercel.app" />
+      </section>
+      <section class="field">
+        <label id="tokenLabel" for="token">接入令牌</label>
+        <input id="token" type="password" placeholder="粘贴你的接入令牌" />
+        <p id="tokenHint" class="hint">令牌只保存在本机浏览器中。</p>
+      </section>
+      <button id="save" class="secondary">保存并验证</button>
+    </details>
+
+    <footer>
+      <button id="disconnect" class="text-button">断开连接并清空本地数据</button>
+      <a id="footerPrivacyLink" href="https://chat-conclude.vercel.app/privacy" target="_blank">隐私说明</a>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

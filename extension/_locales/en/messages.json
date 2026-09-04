@@ -1,0 +1,11 @@
+{
+  "extensionName": {
+    "message": "Weekly Knowledge Review Capture"
+  },
+  "extensionDescription": {
+    "message": "Manually save Claude, ChatGPT, and DeepSeek conversations to your weekly knowledge review. Capture starts only when you click."
+  },
+  "extensionActionTitle": {
+    "message": "Save to Weekly Knowledge Review"
+  }
+}

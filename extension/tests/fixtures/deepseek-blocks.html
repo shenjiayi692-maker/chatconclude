@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<!-- DeepSeek 回答含标题 + 编号列表 + 段落的块级结构（仿真机遇到的「原油价格预测」那类长答案）。
+     关键：块级标签之间【无空白】直接相邻，和 React 渲染的真机 DOM 一致——这样 textContent
+     会把相邻块糊成一行（复现真机 bug），blockAwareText 才必须手动补换行。 -->
+<html>
+<body>
+<div class="ds-scroll-area"><div class="ds-virtual-list-visible-items"><div data-virtual-list-item-key="0"><div class="ds-message"><div class="fbb737a4">原油价格预测</div></div><div class="_11d6b3a"><div class="ds-markdown ds-assistant-message-main-content"><p class="ds-markdown-paragraph">以下是针对原油价格的综合分析及未来预测：</p><h2>一、2024年四季度至2025年原油价格预测</h2><ol><li><p>短期：布伦特原油 85-95美元/桶，WTI原油 80-90美元/桶。</p></li><li><p>中期：布伦特原油 75-90美元/桶。</p></li><li><p>长期：价格中枢下移至 60-80美元/桶。</p></li></ol><h2>二、核心影响因素</h2><p class="ds-markdown-paragraph">地缘政治风险、OPEC+ 政策、美元走势。</p></div></div></div></div></div>
+</body>
+</html>

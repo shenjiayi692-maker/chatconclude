@@ -1,0 +1,14 @@
+{
+  "name": "weekly-review-capture-extension",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test 'tests/*.test.mjs'",
+    "icons": "node scripts/generate-icons.mjs",
+    "package": "bash scripts/package.sh"
+  },
+  "devDependencies": {
+    "linkedom": "^0.18.12"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "extensionName": {
+    "message": "每周知识复习 · 对话采集"
+  },
+  "extensionDescription": {
+    "message": "手动保存 Claude、ChatGPT 和 DeepSeek 对话到你的每周知识复习。只有你点击时才会采集。"
+  },
+  "extensionActionTitle": {
+    "message": "存入每周知识复习"
+  }
+}
