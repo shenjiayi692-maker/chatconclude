@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" role="img" aria-labelledby="title desc">
+  <title id="title">ChatConclude — remember, not retrieve</title>
+  <desc id="desc">A conversation is filtered into useful knowledge, composed into a weekly review, and tested with an active-recall question.</desc>
+  <rect width="1200" height="400" rx="28" fill="#17151f"/>
+  <path d="M0 330 C210 260 332 435 570 352 S920 278 1200 344 V400 H0Z" fill="#211d2b"/>
+  <g transform="translate(64 55)" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
+    <text x="0" y="0" fill="#d8a06c" font-size="18" font-weight="700" letter-spacing="3">AI LEARNING COMPANION</text>
+    <text x="0" y="82" fill="#fbf6ef" font-size="68" font-weight="750">ChatConclude</text>
+    <text x="0" y="129" fill="#e7d9cc" font-size="28">Remember, not retrieve.</text>
+    <text x="0" y="190" fill="#9e98aa" font-size="20">Useful conversations become one weekly review</text>
+    <text x="0" y="219" fill="#9e98aa" font-size="20">and a few questions your brain has to answer.</text>
+    <g transform="translate(0 270)" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="17">
+      <rect width="166" height="38" rx="19" fill="#2b2636" stroke="#4b4359"/>
+      <text x="83" y="25" text-anchor="middle" fill="#d9cedf">Next.js + Supabase</text>
+      <rect x="178" width="138" height="38" rx="19" fill="#2b2636" stroke="#4b4359"/>
+      <text x="247" y="25" text-anchor="middle" fill="#d9cedf">Chrome MV3</text>
+    </g>
+  </g>
+  <g transform="translate(655 42)" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
+    <path d="M52 45 C150 2 250 8 338 59 C420 107 432 221 358 284 C286 346 155 341 76 279 C-3 218 -31 82 52 45Z" fill="#25202e" stroke="#3a3245" stroke-width="2"/>
+    <g transform="translate(10 34)">
+      <rect width="200" height="92" rx="18" fill="#f6eadf" transform="rotate(-5 100 46)"/>
+      <text x="28" y="42" fill="#3d3444" font-size="17" font-weight="650">Why is the sky blue?</text>
+      <text x="28" y="68" fill="#8b6470" font-size="15">worth remembering</text>
+    </g>
+    <path d="M225 103 H285" fill="none" stroke="#d8a06c" stroke-width="3" stroke-linecap="round"/>
+    <path d="M279 96 L290 103 L279 110" fill="none" stroke="#d8a06c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <g transform="translate(282 58)">
+      <rect width="216" height="124" rx="16" fill="#332b3e" stroke="#574865"/>
+      <text x="18" y="31" fill="#c69a73" font-size="15" font-weight="700" letter-spacing="1.5">WEEKLY REVIEW</text>
+      <rect x="18" y="48" width="164" height="7" rx="3" fill="#8d809a"/>
+      <rect x="18" y="67" width="181" height="7" rx="3" fill="#655b70"/>
+      <rect x="18" y="86" width="135" height="7" rx="3" fill="#655b70"/>
+    </g>
+    <path d="M390 194 V244" fill="none" stroke="#d8a06c" stroke-width="3" stroke-linecap="round"/>
+    <path d="M383 237 L390 248 L397 237" fill="none" stroke="#d8a06c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <g transform="translate(275 242)">
+      <rect width="230" height="80" rx="40" fill="#d8a06c"/>
+      <text x="115" y="33" text-anchor="middle" fill="#241c29" font-size="14" font-weight="800" letter-spacing="1.5">ACTIVE RECALL</text>
+      <text x="115" y="57" text-anchor="middle" fill="#382a36" font-size="17" font-weight="650">Can you explain it?</text>
+    </g>
+  </g>
+</svg>

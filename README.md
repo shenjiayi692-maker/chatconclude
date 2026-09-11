@@ -1,62 +1,45 @@
-# 复习周报 · Remember, not retrieve
+<p align="center">
+  <img src="./assets/readme/hero.svg" width="100%" alt="ChatConclude turns useful AI conversations into a weekly review and active-recall quiz">
+</p>
 
-> 你每周和 AI 聊几十次。真正学到的东西，一周后还记得多少？
->
-> 别的工具帮你**囤**——存进可搜索的第二大脑，然后再也没打开过。
-> 我们帮你**记住**——每周把你真正学到的知识送回你脑子里。
+<p align="center">
+  <a href="https://chat-conclude.vercel.app"><strong>Try the stateless demo</strong></a>
+  · <a href="./PRODUCT.md">Product notes</a>
+  · <a href="./docs/CHROME_WEB_STORE.md">Extension guide</a>
+</p>
 
-<!-- 这里放一张周报效果截图或 15 秒 GIF：粘贴对话 → 生成周报 → 做 quiz -->
+ChatConclude helps you remember the useful things you ask AI. Save selected conversations from Claude, ChatGPT, or DeepSeek—or paste one into the web demo—and turn scattered learning into a readable weekly review with short active-recall questions.
 
-## 它是怎么工作的
+## From conversation to memory
 
-**① 随手存。** 在 Claude / ChatGPT / DeepSeek 里碰到值得记住的问答，点一下「存入复习」（浏览器插件），或者直接把对话粘贴进网页。你点存的那一下，就是最好的筛选。
+1. **Capture deliberately.** Save a conversation from the browser extension or paste it from any device.
+2. **Filter the noise.** Knowledge questions stay; delegated work and casual chat are excluded.
+3. **Read one coherent recap.** Related ideas become natural prose instead of a pile of summaries.
+4. **Recall before rereading.** Each review ends with 3–5 questions that make you retrieve the idea yourself.
 
-**② 自动筛。** 它能分清你是在**学东西**（「RFNBO 的 additionality 到底要求什么？」）还是在**让 AI 干活**（「帮我改改这段」）。干活的自动剔掉，只留值得回看的知识。而且它会从你的每次纠正里学习你的口味——你说「这条不该收」，下周它就懂了。
+<p align="center">
+  <img src="./docs/screenshots/filtering.webp" width="88%" alt="ChatConclude filtering knowledge questions from delegated work before composing a weekly review">
+</p>
 
-**③ 每周读一份人话周报。** 不是 bullet point 堆砌，是像懂行的朋友帮你复盘：这周你琢磨了哪几块、每块搞明白了什么。
+## See it work
 
-**④ 测一下才记得牢。** 周报末尾附 3–5 道小题，先自己想答案，再点开对照——主动回忆，比重读有效得多。
+The public homepage is a no-account paste demo. Submit a conversation containing both things you learned and tasks you delegated; the result shows what entered the review, what was filtered, and the quiz that was generated.
 
-![筛选：知识提问进周报，让 AI 干活的被剔掉](docs/screenshots/filtering.webp)
+<p align="center">
+  <img src="./docs/screenshots/paste-demo.webp" width="88%" alt="ChatConclude paste demo for generating a review without signing in">
+</p>
 
-## 为什么不是又一个「第二大脑」
+## Privacy by action
 
-| | 第二大脑 / 收藏工具 | 复习周报 |
-|---|---|---|
-| 动词 | 存起来、搜得到（retrieve） | 记得住（remember） |
-| 内容 | 什么都收 | 只收「值得复习的知识」，会学你的口味 |
-| 姿态 | 等你来查 | 每周主动送回来 |
-| 结局 | 囤了 3000 条，再没打开 | 每周 10 分钟，知识留在脑子里 |
+- The extension reads content only after you explicitly choose to save it and accept the disclosure.
+- The public paste demo is request-scoped: it does not write the pasted conversation to the database or application logs.
+- Signed-in data is isolated per user with Supabase row-level security.
+- Source conversations are removed after weekly archiving; the generated review and quiz remain.
+- Reviews are AI-generated and may contain omissions or errors.
 
-## 隐私
+See the full [privacy policy](https://chat-conclude.vercel.app/privacy) and [production checklist](./docs/PRODUCTION_CHECKLIST.md).
 
-- 你的对话**只属于你**：数据按用户严格隔离
-- 只有你**主动点存/粘贴**的内容才会上传，绝不后台静默采集
-- 网页粘贴的 demo 模式完全无状态：处理完即弃，不保存、不写日志
-
-## 现在能用吗
-
-- ✅ 网页版 demo：粘贴一段你和 AI 的对话，立刻看到你的第一份周报
-- 🚧 浏览器插件（Claude / ChatGPT / DeepSeek 一键存入）：开发中
-- 🗺️ 每周邮件推送、手机端分享采集：路线图上
-
-👉 **试一试：<https://chat-conclude.vercel.app>**（粘贴一段对话即可，无需注册）
-
-![免登录粘贴入口：贴一段对话，当场生成周报](docs/screenshots/paste-demo.webp)
-
-## 技术栈
-
-| | |
-|---|---|
-| 应用 | Next.js 16（App Router）· React 19 · TypeScript · Tailwind v4 |
-| 模型 | Anthropic Claude（`@anthropic-ai/sdk`），负责知识/干活二分类、周报撰写与 Quiz 生成 |
-| 数据 | Supabase Postgres + SSR Auth，7 个版本化迁移，按用户行级隔离 |
-| 采集 | Chrome MV3 扩展，纯 DOM 抓取，不调用任何平台内部 API |
-| 部署 | Vercel，GitHub Actions 跑 lint / test / build |
-
-免登录的粘贴入口 `/` 是完全无状态的：处理完即弃，不落库、不写日志。登录后的数据全部经 Supabase RLS 按用户隔离。
-
-## 本地开发
+## Local development
 
 ```bash
 cp .env.example .env.local
@@ -64,7 +47,7 @@ npm install
 npm run dev
 ```
 
-生产构建：
+Configure the Anthropic and Supabase values listed in [`.env.example`](./.env.example), then validate changes with:
 
 ```bash
 npm run lint
@@ -72,40 +55,25 @@ npm test
 npm run build
 ```
 
-## 数据库迁移
+## Architecture
 
-按文件名顺序执行 `supabase/migrations/` 下的 SQL。生产部署必须先跑迁移，再部署依赖新表结构的代码。
+| Layer | Implementation |
+| --- | --- |
+| Web app | Next.js 16 App Router, React 19, TypeScript, Tailwind CSS |
+| Review engine | Anthropic SDK for classification, review writing, and quiz generation |
+| Accounts and data | Supabase Auth, Postgres, SSR sessions, versioned migrations, RLS |
+| Capture | Chrome Manifest V3 extension using DOM extraction—no private platform APIs |
+| Delivery | Vercel with lint, tests, and build checks |
 
-## 主要入口
+Primary routes are `/` for the stateless demo, `/app/capture` for saved conversations, `/app` for the current review, `/app/history` for archived reviews, and `/app/settings` for account and data controls.
 
-- `/`：免登录粘贴版，不持久化原始对话
-- `/login`：邮箱登录
-- `/app`：登录后的本周回顾
-- `/app/capture`：手机和电脑手动保存对话
-- `/app/history`：历史回顾
-- `/app/settings`：采集方式、时区、数据和账号设置
-- `/app/setup/extension`：免复制令牌的一键扩展连接
+The browser extension lives in [`extension/`](./extension/README.md). Run the SQL files in [`supabase/migrations/`](./supabase/migrations/) in filename order before deploying code that depends on them.
 
-旧入口 `/my`、`/save`、`/history`、`/settings/token`、`/connect-extension` 保留兼容跳转。
+## Status
 
-## 浏览器扩展
+- Web paste demo: available now
+- Account capture, review history, export, and deletion: implemented
+- Chrome extension: packaged for manual installation and store submission
+- Scheduled email delivery and share-to-capture: planned
 
-见 [`extension/README.md`](extension/README.md)。扩展只使用 DOM 抓取，不调用第三方 AI 平台内部 API；商店发布清单见 [`docs/CHROME_WEB_STORE.md`](docs/CHROME_WEB_STORE.md)。
-
-## 上线检查
-
-见 [`docs/PRODUCTION_CHECKLIST.md`](docs/PRODUCTION_CHECKLIST.md)。
-
-## 产品文档
-
-- [`PRODUCT.md`](PRODUCT.md) — 产品定义
-- [`PRD-demo.md`](PRD-demo.md) — 免登录 demo 的需求
-- [`RESEARCH-capture.md`](RESEARCH-capture.md) — 采集方案的调研与取舍
-
-## 反馈
-
-用得不顺、分类判错了、或者你希望支持你在用的平台？开一个 Issue，或直接在产品里点「这条不对」——你的每次纠正都会让它更懂你。
-
----
-
-*采集插件基于 [TheBluCoder/AI-chat-exporter](https://github.com/TheBluCoder/AI-chat-exporter)（MIT）的出色工作构建，详见 THIRD_PARTY_NOTICES.md。*
+The extension capture layer builds on [TheBluCoder/AI-chat-exporter](https://github.com/TheBluCoder/AI-chat-exporter) under MIT; see [`THIRD_PARTY_NOTICES.md`](./THIRD_PARTY_NOTICES.md).
