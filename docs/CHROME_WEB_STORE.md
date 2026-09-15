@@ -112,7 +112,30 @@ English
 - Support URL：`https://chat-conclude.vercel.app/support`
 - Privacy policy URL：`https://chat-conclude.vercel.app/privacy`
 
-当前使用 `vercel.app` 子域，无法作为自有域名完成 Search Console 的 verified publisher 展示。商业公开推广前建议购买并绑定自有域名，再验证 Publisher URL；这不阻挡首次提交。
+当前使用 `vercel.app` 子域。**这不要求购买域名**——Search Console 有两种属性，只有一种需要自有域名：
+
+| 属性类型 | 验证方式 | 本项目可行性 |
+| --- | --- | --- |
+| Domain | 只能加 DNS TXT 记录 | ❌ `vercel.app` 的 DNS 不归我们管 |
+| URL 前缀 | HTML 文件、meta 标签、GA、GTM | ✅ 走 HTML 文件 |
+
+Dashboard 的 Official URL 字段只收 Search Console 验证过的站点（点 "Add a new site" 会跳去 Search Console），用 URL 前缀属性即可满足。
+
+### 用 HTML 文件验证 `https://chat-conclude.vercel.app/`
+
+1. 打开 <https://search.google.com/search-console>，用与 Chrome Web Store 开发者账号相同的 Google 账号登录。
+2. 添加属性 → 选右侧的 **URL 前缀**（不要选左侧的"网域"）→ 填 `https://chat-conclude.vercel.app/`。
+3. 验证方式选 **HTML 文件**，下载它给的 `google<一串字符>.html`。
+4. 把该文件原样放进仓库的 `public/`，提交并部署。`public/` 下的文件在根路径直接可达——
+   `public/downloads/weekly-review-capture-0.3.0.zip` 现在就在 `/downloads/...` 上返回 200，已验证。
+5. 部署完成后回 Search Console 点"验证"。
+6. 验证通过后，回 Chrome Web Store Dashboard 的 Account 页，把该站点选为 Official URL。
+
+文件验证通过后不要从 `public/` 删除它，Google 会定期复查。
+
+尚未实测的一点：Google 没有明文说明免费二级域名能否作为 Official URL。机制上没有障碍，但以实测为准；上面六步成本约十分钟，试通了就不必买域名。
+
+另注：**Featured badge** 另有硬条件——必须是 public，且核心功能无需额外凭据即可使用。本扩展需要连接账号，大概率不符合，不必为此调整产品。**Established Publisher badge** 看的是身份验证和数月的良好记录，与域名无关。
 
 ## 2. Privacy practices
 
@@ -186,17 +209,23 @@ Let users explicitly select content from the current Claude, ChatGPT, or DeepSee
 
 ## 3. Distribution
 
-初次发布建议：
+**当前状态（2026-09-15 核实）：Published · Unlisted**
 
-- Visibility：`Unlisted`
+- 扩展 ID：`hmpfieahioioldbnicdckaiahmmmammk`
+- 商店名称：每周知识复习 · 对话采集
+- 版本：0.3.0，2026-08-01 发布
 - Regions：全部可用地区
 - Pricing：Free
 
-先以 Unlisted 邀请 5–20 名种子用户验证安装、连接和持续使用；稳定后再切换 Public。Unlisted 仍需审核，但不会出现在商店搜索中。
+Unlisted 意味着直链可安装，但不出现在商店搜索里。
+
+原定策略是先以 Unlisted 邀请 5–20 名种子用户验证安装、连接和持续使用，稳定后再切 Public。
+**该验证已于 2026-09-15 确认完成，切 Public 的前置条件已满足**，切换需在 Dashboard 操作并重新过一轮审核。
 
 ## 4. Test instructions
 
 扩展核心功能需要连接账号。提交前在网站设置页创建一个专用审核令牌，不要使用个人主账号令牌。
+令牌管理页是 <https://chat-conclude.vercel.app/app/settings>（注意是 `/app/settings`，`/settings` 没有这个路由）。
 
 **Reviewer steps**
 
