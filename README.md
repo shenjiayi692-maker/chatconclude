@@ -8,6 +8,20 @@
   · <a href="./docs/CHROME_WEB_STORE.md">Extension guide</a>
 </p>
 
+<p align="center"><strong>English</strong> · <a href="./README.zh-CN.md">中文</a></p>
+
+> You talk to AI dozens of times a week. A week later, how much of it do you
+> actually still know?
+
+Nothing to install — <https://chat-conclude.vercel.app> takes a pasted
+conversation and returns a review. To run it locally:
+
+```bash
+git clone https://github.com/shenjiayi692-maker/chatconclude && cd chatconclude && cp .env.example .env.local && npm i && npm run dev
+```
+
+It starts and tells you which keys to set; the full flow needs Anthropic and Supabase.
+
 ChatConclude helps you remember the useful things you ask AI. Save selected conversations from Claude, ChatGPT, or DeepSeek—or paste one into the web demo—and turn scattered learning into a readable weekly review with short active-recall questions.
 
 ## From conversation to memory
