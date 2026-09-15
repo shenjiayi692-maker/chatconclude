@@ -4,6 +4,7 @@
 
 <p align="center">
   <a href="https://chat-conclude.vercel.app"><strong>Try the stateless demo</strong></a>
+  · <a href="https://chromewebstore.google.com/detail/hmpfieahioioldbnicdckaiahmmmammk"><strong>Get the extension</strong></a>
   · <a href="./PRODUCT.md">Product notes</a>
   · <a href="./docs/CHROME_WEB_STORE.md">Extension guide</a>
 </p>
@@ -87,7 +88,7 @@ The browser extension lives in [`extension/`](./extension/README.md). Run the SQ
 
 - Web paste demo: available now
 - Account capture, review history, export, and deletion: implemented
-- Chrome extension: packaged for manual installation and store submission
+- Chrome extension: [live on the Chrome Web Store](https://chromewebstore.google.com/detail/hmpfieahioioldbnicdckaiahmmmammk), version 0.3.0
 - Scheduled email delivery and share-to-capture: planned
 
 The extension capture layer builds on [TheBluCoder/AI-chat-exporter](https://github.com/TheBluCoder/AI-chat-exporter) under MIT; see [`THIRD_PARTY_NOTICES.md`](./THIRD_PARTY_NOTICES.md).

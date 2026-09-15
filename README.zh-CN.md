@@ -4,6 +4,7 @@
 
 <p align="center">
   <a href="https://chat-conclude.vercel.app"><strong>试试无状态 demo</strong></a>
+  · <a href="https://chromewebstore.google.com/detail/hmpfieahioioldbnicdckaiahmmmammk"><strong>安装扩展</strong></a>
   · <a href="./PRODUCT.md">产品说明</a>
   · <a href="./docs/CHROME_WEB_STORE.md">扩展指南</a>
 </p>
@@ -85,7 +86,7 @@ npm run build
 
 - 网页粘贴 demo：现在可用
 - 账号采集、周报历史、导出和删除：已实现
-- Chrome 扩展：已打包，可手动安装，也已提交商店
+- Chrome 扩展：[已上架 Chrome Web Store](https://chromewebstore.google.com/detail/hmpfieahioioldbnicdckaiahmmmammk)，版本 0.3.0
 - 定时邮件推送、分享采集：计划中
 
 扩展的采集层基于 [TheBluCoder/AI-chat-exporter](https://github.com/TheBluCoder/AI-chat-exporter)（MIT），详见 [`THIRD_PARTY_NOTICES.md`](./THIRD_PARTY_NOTICES.md)。
