@@ -5,9 +5,22 @@
 1. 先备份 Supabase。
 2. 按顺序执行新增迁移。
 3. `npm run lint && npm run build`。
-4. 部署 Vercel。
+4. 推 `main`。Vercel 项目 **`chat-conclude`** 已连接本仓库，`main` 即生产分支，推送自动部署。
+   需要绕过 Git 手动发版时，在仓库根目录执行 `npx vercel --prod`（`.vercel/project.json` 已绑定该项目）。
 5. 检查 `/`、`/login`、`/app`、`/app/capture`、`/app/history`、`/app/settings` 和 `/api/ingest/ping`。
 6. 检查旧入口 `/my`、`/save`、`/history`、`/settings/token`、`/connect-extension` 是否跳到对应新页面。
+
+## 部署环境
+
+- 生产项目：`chat-conclude`（Vercel），域名 `chat-conclude.vercel.app`。
+  扩展 manifest、隐私政策页、Chrome Web Store 上架资料全部指向这个域名。
+- 该域名已作为 Search Console 的 URL 前缀属性验证通过，用于 Chrome Web Store 的 Official URL。
+  验证文件是 `public/google174d0abf80a8d52c.html`，**不要删除**，Google 会定期复查。
+
+> 历史陷阱(2026-09-15 已修复)：9 月 4 日首次把代码推上 GitHub 时，Vercel 集成按仓库名
+> 自动新建了第二个项目 `chatconclude`，此后所有 push 都部署到那个没人访问的项目，
+> 生产域名停在 8 月 13 日的构建长达一个月。该项目已删除，`chat-conclude` 已接管 Git 连接。
+> 如果以后又出现"推了代码线上没变"，先确认 Vercel 里只有一个项目连着这个仓库。
 
 ## 安全
 
