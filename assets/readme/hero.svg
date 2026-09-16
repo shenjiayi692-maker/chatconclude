@@ -10,10 +10,10 @@
     <text x="0" y="190" fill="#9e98aa" font-size="20">Useful conversations become one weekly review</text>
     <text x="0" y="219" fill="#9e98aa" font-size="20">and a few questions your brain has to answer.</text>
     <g transform="translate(0 270)" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="17">
-      <rect width="166" height="38" rx="19" fill="#2b2636" stroke="#4b4359"/>
-      <text x="83" y="25" text-anchor="middle" fill="#d9cedf">Next.js + Supabase</text>
-      <rect x="178" width="138" height="38" rx="19" fill="#2b2636" stroke="#4b4359"/>
-      <text x="247" y="25" text-anchor="middle" fill="#d9cedf">Chrome MV3</text>
+      <rect width="216" height="38" rx="19" fill="#2b2636" stroke="#4b4359"/>
+      <text x="108" y="25" text-anchor="middle" fill="#d9cedf">Next.js + Supabase</text>
+      <rect x="228" width="138" height="38" rx="19" fill="#2b2636" stroke="#4b4359"/>
+      <text x="297" y="25" text-anchor="middle" fill="#d9cedf">Chrome MV3</text>
     </g>
   </g>
   <g transform="translate(655 42)" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
